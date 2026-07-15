@@ -1,50 +1,59 @@
 <!DOCTYPE html>
-
 <html lang="fr">
-
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion sécurisée</title>
 
-<meta charset="UTF-8">
-
-<title>Connexion</title>
-
-<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
+<body class="bg-gray-100">
 
-<body>
+    <div class="min-h-screen flex items-center justify-center px-4">
+        <div class="w-full max-w-md bg-white rounded-2xl shadow-xl p-8">
 
-<div class="box">
+            <div class="text-center mb-8">
+                <h1 class="text-3xl font-bold text-gray-800">
+                    Vidéo protégée
+                </h1>
 
-<h1>Vidéo protégée</h1>
+                <p class="mt-2 text-gray-500">
+                    Veuillez saisir le mot de passe pour accéder à la vidéo.
+                </p>
+            </div>
 
-<form method="POST">
+            <form method="POST" class="space-y-5">
 
-<input
-type="password"
-name="password"
-placeholder="Mot de passe">
+                <div>
+                    <input
+                        type="password"
+                        name="password"
+                        placeholder="Mot de passe"
+                        required
+                        class="w-full rounded-lg border border-gray-300 px-4 py-3 focus:border-blue-600 focus:ring-2 focus:ring-blue-500 outline-none transition"
+                    >
+                </div>
 
-<button>
+                <button
+                    type="submit"
+                    class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-lg transition duration-300"
+                >
+                    Accéder
+                </button>
 
-Accéder
+            </form>
 
-</button>
+            {% if error %}
+            <div class="mt-5 rounded-lg bg-red-100 border border-red-300 px-4 py-3">
+                <p class="text-red-700 text-center">
+                    {{ error }}
+                </p>
+            </div>
+            {% endif %}
 
-</form>
-
-{% if error %}
-
-<p class="error">
-
-{{ error }}
-
-</p>
-
-{% endif %}
-
-</div>
+        </div>
+    </div>
 
 </body>
-
 </html>
