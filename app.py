@@ -13,7 +13,7 @@ app.config.from_object(Config)
 
 VIDEO_NAME = "video.mp4"
 
-PASSWORD = "123456PROSEC"
+PASSWORD = "123456DIVINTER"
 
 # -----------------------------
 # Page de connexion
