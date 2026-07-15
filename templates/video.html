@@ -1,3 +1,4 @@
+<!--
 <!DOCTYPE html>
 
 <html>
@@ -36,4 +37,35 @@ Déconnexion
 
 </body>
 
+</html>
+
+-->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Lecture vidéo</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="box">
+
+    <h2>Lecture sécurisée</h2>
+
+    <video controls controlsList="nodownload" width="800">
+        <source src="{{ url_for('stream') }}" type="video/mp4">
+    </video>
+
+    <br><br>
+
+    <a href="{{ url_for('logout') }}">
+        Déconnexion
+    </a>
+
+</div>
+
+</body>
 </html>
