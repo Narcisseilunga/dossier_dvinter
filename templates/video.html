@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>Lecture</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="box">
+
+<h2>Lecture sécurisée</h2>
+
+<video controls width="800">
+
+<source src="{{ video }}" type="video/mp4">
+
+</video>
+
+<br><br>
+
+<a href="/logout">
+
+Déconnexion
+
+</a>
+
+</div>
+
+</body>
+
+</html>
