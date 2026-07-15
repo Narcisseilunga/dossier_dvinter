@@ -12,9 +12,9 @@ app = Flask(
 
 app.secret_key = "MonSuperSecret"
 
-PASSWORD = "123456"
+PASSWORD = "123456PROSEC"
 
-VIDEO_URL = "https://votre-video.mp4"
+VIDEO_URL = "https://kwazheagytnykhruagct.supabase.co"
 
 
 @app.route("/", methods=["GET", "POST"])
