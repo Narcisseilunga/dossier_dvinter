@@ -1,39 +1,17 @@
 <!DOCTYPE html>
-
-<html>
-
+<html lang="fr">
 <head>
-
-<meta charset="UTF-8">
-
-<title>Lecture</title>
-
-<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-
+    <meta charset="UTF-8">
+    <title>Lecture vidéo</title>
 </head>
-
 <body>
 
-<div class="box">
+<h2>Vidéo protégée</h2>
 
-<h2>Lecture sécurisée</h2>
-
-<video controls width="800">
-
-<source src="{{ video }}" type="video/mp4">
-
+<video width="800" controls>
+    <source src="{{ url_for('stream') }}" type="video/mp4">
+    Votre navigateur ne supporte pas la vidéo.
 </video>
 
-<br><br>
-
-<a href="/logout">
-
-Déconnexion
-
-</a>
-
-</div>
-
 </body>
-
 </html>

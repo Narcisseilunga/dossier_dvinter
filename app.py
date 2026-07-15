@@ -60,15 +60,18 @@ def video():
 @app.route("/stream")
 def stream():
 
-    if not session.get("connected"):
+    print("UPLOAD_FOLDER :", app.config.get("UPLOAD_FOLDER"))
 
-        return redirect(url_for("login"))
+    print("EXISTE :", os.path.exists(app.config.get("UPLOAD_FOLDER", "")))
+
+    print("VIDEO :", os.path.exists(
+        os.path.join(app.config.get("UPLOAD_FOLDER", ""), "video.mp4")
+    ))
 
     return send_from_directory(
         app.config["UPLOAD_FOLDER"],
         VIDEO_NAME
     )
-
 
 # -----------------------------
 # Déconnexion
